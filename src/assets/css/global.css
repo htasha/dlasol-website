@@ -1,0 +1,42 @@
+* {
+    font-family: 'Josefin Sans', 'sans-serif';
+}
+
+li {
+    list-style: none;
+}
+
+.typography--eb-garamond {
+    font-family: 'EB Garamond', 'serif';
+    font-style: italic;
+    font-weight: 400;
+}
+
+.h1 {
+    font-size: 1.75rem;
+    margin: 1rem 0;
+}
+
+.text-white_emphasis--high {
+    color: rgba(255, 255, 255, 1);
+}
+
+.text-white_emphasis--md {
+    color: rgba(255, 255, 255, .84);
+}
+
+.font-size--22 {
+    font-size: 1.125rem;
+}
+
+.font-weight--light {
+    font-weight: 300;
+}
+
+.link:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.text-align--center{
+    text-align: center;
+}
