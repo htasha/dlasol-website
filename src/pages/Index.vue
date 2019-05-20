@@ -34,14 +34,15 @@
 </template>
 
 <script>
-import { TweenMax, ScrollToPlugin } from "gsap/all";
+import { TweenMax, ScrollToPlugin, CSSPlugin } from "gsap/all";
 export default {
   data() {
     return {
       currentMenu: "Courses",
       menus: ["Courses", "Services", "Portfolio", "Bio"],
       tweenMax: null,
-      scrollToPlugin: null
+      scrollToPlugin: null,
+      cssPlugin: null
     };
   },
   methods: {
@@ -63,6 +64,7 @@ export default {
   mounted() {
     this.tweenMax = TweenMax;
     this.scrollToPlugin = ScrollToPlugin;
+    this.cssPlugin = CSSPlugin;
     this.tweenMax.from(".h1", 1, { opacity: 0, y: -20 });
     this.tweenMax.from(".logo", 1, { opacity: 0 });
     this.tweenMax.staggerFrom(".link", 0.3, { opacity: 0, y: 20 }, 0.2);
