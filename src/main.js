@@ -7,13 +7,12 @@ import './assets/css/global.css';
 import 'typeface-eb-garamond';
 import 'typeface-josefin-sans';
 import { VueMasonryPlugin } from 'vue-masonry';
-// import Masonry from 'masonry-layout';
+import 'masonry-layout';
 import TheFooter from '~/layouts/TheFooter.vue'
 import Courses from '~/components/Courses.vue'
 import Services from '~/components/Services.vue'
 import Portfolio from '~/components/Portfolio.vue'
 import Bio from '~/components/Bio.vue'
-// const masonry = [Masonry];
 
 export default function (Vue, { router, head, isClient }) {
   head.script.push({
