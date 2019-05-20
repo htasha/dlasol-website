@@ -27,6 +27,8 @@ export default {
     const Masonry = require("masonry-layout");
     new Masonry(".grid", {
       itemSelector: ".item",
+      columnWidth: 250,
+      fitWidth: true,
       gutter: 10
     });
   }
@@ -35,6 +37,9 @@ export default {
 
 
 <style>
+.grid {
+  margin: 0 auto;
+}
 .img {
   max-width: 250px;
   display: block;
