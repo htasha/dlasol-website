@@ -12,7 +12,6 @@ import Services from '~/components/Services.vue'
 import Portfolio from '~/components/Portfolio.vue'
 import Bio from '~/components/Bio.vue'
 
-
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component('Row', Row);
