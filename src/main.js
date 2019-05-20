@@ -6,7 +6,6 @@ import 'iview/dist/styles/iview.css';
 import './assets/css/global.css';
 import 'typeface-eb-garamond';
 import 'typeface-josefin-sans';
-import { TweenLite, ScrollToPlugin } from "gsap/all";
 import TheFooter from '~/layouts/TheFooter.vue'
 import Courses from '~/components/Courses.vue'
 import Services from '~/components/Services.vue'

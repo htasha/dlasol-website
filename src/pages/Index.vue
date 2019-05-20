@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import { TweenLite, ScrollToPlugin } from "gsap/all";
 export default {
   data() {
     return {
