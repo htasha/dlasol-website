@@ -24,7 +24,7 @@
             </header>
             <TheFooter/>
           </Col>
-          <Col :xs="24" :md="{ span: 16, offset: 8 }" class="col2">
+          <Col :xs="24" :md="{ span: 16, offset: 8 }" class-name="col2">
             <component :is="currentMenuComponent"/>
           </Col>
         </Row>
@@ -65,7 +65,7 @@ export default {
     this.tweenMax = TweenMax;
     this.scrollToPlugin = ScrollToPlugin;
     this.cssPlugin = CSSPlugin;
-    this.tweenMax.from(".h1", 1, { opacity: 0, y: -20 });
+    this.tweenMax.from(".h1", 0.5, { opacity: 0, y: -20 });
     this.tweenMax.from(".logo", 1, { opacity: 0 });
     this.tweenMax.staggerFrom(".link", 0.3, { opacity: 0, y: 20 }, 0.2);
   }
@@ -113,7 +113,7 @@ export default {
   }
 }
 .col2 {
-  height: 1000px;
+  min-height: 1000px;
 }
 </style>
 
