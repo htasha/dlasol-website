@@ -40,7 +40,8 @@ export default {
     return {
       currentMenu: "Courses",
       menus: ["Courses", "Services", "Portfolio", "Bio"],
-      tweenlite: null
+      tweenlite: null,
+      scrollToPlugin: null
     };
   },
   methods: {
@@ -59,6 +60,7 @@ export default {
   },
   mounted() {
     this.tweenlite = TweenLite;
+    this.scrollToPlugin = ScrollToPlugin;
   }
 };
 </script>
