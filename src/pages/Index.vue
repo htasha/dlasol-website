@@ -39,13 +39,14 @@ export default {
   data() {
     return {
       currentMenu: "Courses",
-      menus: ["Courses", "Services", "Portfolio", "Bio"]
+      menus: ["Courses", "Services", "Portfolio", "Bio"],
+      tweenlite: null
     };
   },
   methods: {
     setMenu(menu) {
       this.currentMenu = menu;
-      TweenLite.to(window, 0.5, { scrollTo: `#${menu.toLowerCase()}` });
+      this.tweenlite.to(window, 0.5, { scrollTo: `#${menu.toLowerCase()}` });
     }
   },
   computed: {
@@ -56,7 +57,9 @@ export default {
   metaInfo: {
     title: "Hello, world!"
   },
-  mounted() {}
+  mounted() {
+    this.tweenlite = TweenLite;
+  }
 };
 </script>
 
