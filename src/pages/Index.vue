@@ -1,34 +1,36 @@
 <template>
-  <div class="bg">
-    <div class="bg__overlay">
-      <Row>
-        <Col :xs="24" :md="8" class="row__col-1">
-          <header class="header text-align--center">
-            <g-link to="/" aria-label="Back to home">
-              <g-image src="../assets/images/logo.svg" class="logo"/>
-            </g-link>
-            <h1
-              class="h1 text-white_emphasis--high text-emphasis--high typography--eb-garamond"
-            >We're a creative agency based on Plant City, Florida</h1>
-            <nav class="nav">
-              <ul>
-                <li v-for="(menu, i) in menus" :key="i" class="nav__list-item">
-                  <a
-                    class="link text-white_emphasis--md font-weight--light font-size--22"
-                    @click="currentMenu = menu"
-                  >{{ menu }}</a>
-                </li>
-              </ul>
-            </nav>
-          </header>
-          <TheFooter/>
-        </Col>
-        <Col :xs="24" :md="{ span: 16, offset: 8 }" class="col2">
-          <component :is="currentMenuComponent"/>
-        </Col>
-      </Row>
+  <transition name="fade" appear>
+    <div class="bg">
+      <div class="bg__overlay">
+        <Row>
+          <Col :xs="24" :md="8" class="row__col-1">
+            <header class="header text-align--center">
+              <g-link to="/" aria-label="Back to home">
+                <g-image src="../assets/images/logo.svg" class="logo"/>
+              </g-link>
+              <h1
+                class="h1 text-white_emphasis--high text-emphasis--high typography--eb-garamond"
+              >We're a creative agency based on Plant City, Florida</h1>
+              <nav class="nav">
+                <ul>
+                  <li v-for="(menu, i) in menus" :key="i" class="nav__list-item">
+                    <a
+                      class="link text-white_emphasis--md font-weight--light font-size--22"
+                      @click="setMenu(menu)"
+                    >{{ menu }}</a>
+                  </li>
+                </ul>
+              </nav>
+            </header>
+            <TheFooter/>
+          </Col>
+          <Col :xs="24" :md="{ span: 16, offset: 8 }" class="col2">
+            <component :is="currentMenuComponent"/>
+          </Col>
+        </Row>
+      </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -39,11 +41,11 @@ export default {
       menus: ["Courses", "Services", "Portfolio", "Bio"]
     };
   },
-  components: {
-    Courses: () => import("../components/Courses.vue"),
-    Services: () => import("../components/Services.vue"),
-    Portfolio: () => import("../components/Portfolio.vue"),
-    Bio: () => import("../components/Bio.vue")
+  methods: {
+    setMenu(menu) {
+      this.currentMenu = menu;
+      TweenLite.to(window, 0.5, { scrollTo: `#${menu.toLowerCase()}` });
+    }
   },
   computed: {
     currentMenuComponent: function() {
@@ -52,13 +54,20 @@ export default {
   },
   metaInfo: {
     title: "Hello, world!"
-  }
+  },
+  mounted() {}
 };
 </script>
 
 <style>
+.fade-enter-active {
+  transition: opacity 0.5s;
+}
+.fade-enter {
+  opacity: 0;
+}
 .bg {
-  background-image: url(../assets/images/bg.jpg);
+  background-image: url(../assets/images/bg.jpeg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
