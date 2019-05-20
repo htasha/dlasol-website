@@ -16,7 +16,7 @@
                   <li v-for="(menu, i) in menus" :key="i" class="nav__list-item">
                     <a
                       class="link text-white_emphasis--md font-weight--light font-size--22"
-                      @click="setMenu(menu)"
+                      @click="scrollTo(menu)"
                     >{{ menu }}</a>
                   </li>
                 </ul>
@@ -46,7 +46,7 @@ export default {
     };
   },
   methods: {
-    setMenu(menu) {
+    scrollTo(menu) {
       this.currentMenu = menu;
       this.tweenMax.to(window, 0.5, {
         scrollTo: `#${menu.toLowerCase()}`
