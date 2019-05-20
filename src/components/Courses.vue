@@ -1,35 +1,37 @@
 <template>
-  <ClientOnly>
-    <div id="courses " class="p-2">
-      <div
-        v-masonry
-        transition-duration="0.3s"
-        item-selector=".item"
-        :gutter="10"
-        :fit-width="false"
-      >
-        <div v-masonry-tile class="item">
-          <g-image class="img" src="@/assets/images/lashes.jpeg"/>
-        </div>
-        <div v-masonry-tile class="item">
-          <g-image class="img" src="@/assets/images/lashes.jpeg"/>
-        </div>
-        <div v-masonry-tile class="item">
-          <g-image class="img" src="@/assets/images/lashes.jpeg"/>
-        </div>
-        <div v-masonry-tile class="item">
-          <g-image class="img" src="@/assets/images/lashes.jpeg"/>
-        </div>
-        <div v-masonry-tile class="item">
-          <g-image class="img" src="@/assets/images/lashes.jpeg"/>
-        </div>
-        <div v-masonry-tile class="item">
-          <g-image class="img" src="@/assets/images/lashes.jpeg"/>
-        </div>
-      </div>
+  <div id="courses" class="grid p-2">
+    <div class="item">
+      <g-image class="img" src="@/assets/images/lashes.jpeg"/>
     </div>
-  </ClientOnly>
+    <div class="item">
+      <g-image class="img" src="@/assets/images/lashes.jpeg"/>
+    </div>
+    <div class="item">
+      <g-image class="img" src="@/assets/images/lashes.jpeg"/>
+    </div>
+    <div class="item">
+      <g-image class="img" src="@/assets/images/lashes.jpeg"/>
+    </div>
+    <div class="item">
+      <g-image class="img" src="@/assets/images/lashes.jpeg"/>
+    </div>
+    <div class="item">
+      <g-image class="img" src="@/assets/images/lashes.jpeg"/>
+    </div>
+  </div>
 </template>
+
+<script>
+export default {
+  mounted() {
+    const Masonry = new this.$Masonry(".grid", {
+      itemSelector: ".item",
+      gutter: 10
+    });
+  }
+};
+</script>
+
 
 <style>
 .img {
