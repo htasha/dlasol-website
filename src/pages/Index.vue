@@ -34,20 +34,22 @@
 </template>
 
 <script>
-import { TweenLite, ScrollToPlugin } from "gsap/all";
+import { TweenMax, ScrollToPlugin } from "gsap/all";
 export default {
   data() {
     return {
       currentMenu: "Courses",
       menus: ["Courses", "Services", "Portfolio", "Bio"],
-      tweenlite: null,
+      tweenMax: null,
       scrollToPlugin: null
     };
   },
   methods: {
     setMenu(menu) {
       this.currentMenu = menu;
-      this.tweenlite.to(window, 0.5, { scrollTo: `#${menu.toLowerCase()}` });
+      this.tweenMax.to(window, 0.5, {
+        scrollTo: `#${menu.toLowerCase()}`
+      });
     }
   },
   computed: {
@@ -59,8 +61,11 @@ export default {
     title: "Hello, world!"
   },
   mounted() {
-    this.tweenlite = TweenLite;
+    this.tweenMax = TweenMax;
     this.scrollToPlugin = ScrollToPlugin;
+    this.tweenMax.from(".h1", 1, { opacity: 0, y: -20 });
+    this.tweenMax.from(".logo", 1, { opacity: 0 });
+    this.tweenMax.staggerFrom(".link", 0.3, { opacity: 0, y: 20 }, 0.2);
   }
 };
 </script>
