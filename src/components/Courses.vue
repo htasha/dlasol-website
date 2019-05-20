@@ -24,7 +24,8 @@
 <script>
 export default {
   mounted() {
-    const Masonry = new this.$Masonry(".grid", {
+    const Masonry = require("masonry-layout");
+    new Masonry(".grid", {
       itemSelector: ".item",
       gutter: 10
     });
