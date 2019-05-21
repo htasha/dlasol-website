@@ -6,7 +6,7 @@
           <Col :xs="24" :md="8" class="row__col-1">
             <header class="header text-align--center">
               <g-link to="/" aria-label="Back to home">
-                <g-image src="../assets/images/logo.svg" class="logo"/>
+                <g-image src="../assets/images/logo.svg" class="logo" width="160"/>
               </g-link>
               <h1
                 class="h1 text-white_emphasis--high text-emphasis--high typography--eb-garamond"
@@ -59,7 +59,7 @@ export default {
     }
   },
   metaInfo: {
-    title: "Hello, world!"
+    title: "Creative agency based on Plant, Florida"
   },
   mounted() {
     this.tweenMax = TweenMax;
