@@ -56,15 +56,14 @@ padding: 2rem;
     margin-bottom: 16px;
     width: 250px;
   }
-  .grid__card {
-    background-color: #fff;
-  }
+  
   .grid__title {
     padding: 1rem;
   }
   .grid__text {
     padding: 0 1rem 8px 1rem;
   }
+  
   .img {
     max-width: 250px;
     display: block;
