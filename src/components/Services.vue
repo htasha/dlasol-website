@@ -49,7 +49,7 @@
     <Card class="grid__item" :bordered="false" :padding="0">
       <g-image class="img" src="@/assets/images/study-technology-for-kids.jpg" width="250"/>
       <div class="grid__title">
-        <h2 class="text-black">Fashion Advisor</h2>
+        <h2 class="text-black">Study technology and body therapy</h2>
       </div>
       <div
         class="grid__text"
